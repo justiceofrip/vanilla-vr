@@ -1,0 +1,53 @@
+# VR tuning, read by PLAY.cmd at each launch: one NAME=value per line; # starts a comment.
+# Uncomment a line (remove the #) to use it. Most comfort settings can also be changed in the
+# headset on the book's VR page, which writes them back here.
+
+# Vibration strength, 0 = off.
+# WOWVR_HAPTICS=1
+
+# Smooth turning instead of 45 degree snaps.
+# WOWVR_TURN=smooth
+# WOWVR_TURN_SPEED=90
+
+# Playing seated: start with the view lifted to standing eye height.
+# WOWVR_SEATED=1
+
+# Melee: shorter arms or seated play may want a gentler swing gate (below 1).
+# WOWVR_REACH_SCALE=1
+
+# Walk where the head looks instead of where the left controller points.
+# WOWVR_MOVE_RELATIVE=head
+
+# A dark rim at the edges of the view while you are moved fast (Charge, knockbacks, flight paths);
+# "all" also while you walk.
+# WOWVR_VIGNETTE=fast
+
+# Swim up and down where the left controller points instead of where you look.
+# WOWVR_SWIM_PITCH=hand
+
+# Bigger or smaller damage numbers and speech bubbles floating over heads.
+# WOWVR_COMBAT_TEXT_SIZE=2.4
+# WOWVR_BUBBLE_SIZE=0.035
+
+# No first-time tips (or delete logs\tips-seen.txt to see them all again).
+# WOWVR_TIPS=0
+
+# Where your swing clock shows: hud (a casting bar low in the middle of your view, the default),
+# blade (the gold glow on your weapon), plate (a bar under the enemy's health), both (blade and
+# plate) or all; or a list, as hud,blade.
+# WOWVR_SWING_BAR=blade
+
+# The HUD (your frame, your party) is locked to your head. lazy lets it hold through a glance
+# and catch up when you look away.
+# WOWVR_HUD_FOLLOW=lazy
+
+# Y opens the book before you. panel makes Y the whole interface panel instead; WOWVR_BOOK_HIP=1
+# brings back drawing the book from your left hip and holding it.
+# WOWVR_MENU=panel
+# WOWVR_BOOK_HIP=1
+
+# Turn off the body moves: 0 for each you do not want.
+# WOWVR_WARRIOR_MOVES=0
+# WOWVR_CROUCH=0
+# WOWVR_GESTURES=0
+# WOWVR_EMOTES=0

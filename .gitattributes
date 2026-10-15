@@ -1,0 +1,5 @@
+# Windows scripts and texts keep their CRLF line endings, as Notepad and cmd want them.
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+*.txt text eol=crlf
+*.md text eol=lf

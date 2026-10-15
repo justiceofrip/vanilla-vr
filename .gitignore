@@ -1,0 +1,7 @@
+# The kit itself ships as a release, never in the repository.
+*.zip
+*.exe
+# What a friend's own kit folder gathers.
+settings.txt
+logs/
+previous/
