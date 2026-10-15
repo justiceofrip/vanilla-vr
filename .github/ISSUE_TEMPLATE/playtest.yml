@@ -1,0 +1,35 @@
+name: Playtest report
+description: How a session of Vanilla VR went. The launcher's feedback card fills this in for you.
+title: "Playtest: "
+labels: ["playtest"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for playing. Vanilla VR is judged on three things: is it fun, does it work, and how does your body feel after an hour of it. Tell us how each went.
+  - type: input
+    id: ratings
+    attributes:
+      label: Ratings, 1 to 5
+      description: "Fun (boring to a blast), did it work (broken to flawless), your arms and back afterwards (worn out to fresh)."
+      placeholder: Fun 4/5, it worked 3/5, your body afterwards 5/5
+  - type: input
+    id: class
+    attributes:
+      label: What you played
+      placeholder: level 20 Dwarf Paladin
+  - type: textarea
+    id: great
+    attributes:
+      label: What felt great?
+  - type: textarea
+    id: broke
+    attributes:
+      label: What broke, misfired or tired you out?
+      description: The more exact the better. Which move, what you meant to do, what happened instead.
+  - type: textarea
+    id: data
+    attributes:
+      label: Session data
+      description: Filled in by the launcher (how long you played, your PC and headset, the moves that fired). Leave it as it is.
+      render: text

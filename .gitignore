@@ -5,3 +5,11 @@
 settings.txt
 logs/
 previous/
+# What the launcher makes in a kit folder: your game's art, your own realm, your feedback, the
+# update's state.
+cache/
+solo/
+feedback/
+update/
+news.json
+version.txt

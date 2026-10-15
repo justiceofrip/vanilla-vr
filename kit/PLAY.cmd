@@ -1,5 +1,4 @@
 @echo off
-title Vanilla VR
-powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0play.ps1"
-echo.
-pause
+start "" powershell -nop -ep bypass -sta -w hidden -f "%~dp0launcher.ps1"&exit /b
+::
+exit /b

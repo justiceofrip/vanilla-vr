@@ -1,15 +1,21 @@
 # Vanilla VR
 
 A VR client for the 1.12 game, played with your body: swing your sword, draw your bow, push a palm
-out to cast, lay a hand on a friend to heal them, and talk to the players near you. Your friend
-runs the server on their PC, and you join it privately over Tailscale.
+out to cast, lay a hand on a friend to heal them, and talk to the players near you. Play on a
+friend's server, joined privately over Tailscale, or on a realm of your own that the launcher builds
+on your PC.
 
-This repository is the **friend kit**: the client, its launcher and its guide. The client is built on
+This repository is the **kit**: the client, its launcher and its guide. The client is built on
 [Benilla](https://github.com/samwhosung/benilla), a 1.12.1 client written from scratch in Rust.
 
 > **No game files are included.** You need your own copy of the World of Warcraft 1.12.1 client.
-> The kit reads the game's data from your install, on your PC. Vanilla VR is not affiliated with or
-> endorsed by Blizzard Entertainment. World of Warcraft is a trademark of Blizzard Entertainment, Inc.
+> The kit reads the game's data from your install, on your PC, and so does the launcher's look.
+> Vanilla VR is not affiliated with or endorsed by Blizzard Entertainment. World of Warcraft is a
+> trademark of Blizzard Entertainment, Inc.
+
+**[The install guide](INSTALL.md)** takes you from nothing to standing in the game.
+
+![The launcher](docs/launcher-ready.png)
 
 ## What you need
 
@@ -17,45 +23,44 @@ This repository is the **friend kit**: the client, its launcher and its guide. T
 - **A PC VR headset that works with SteamVR.** A Quest works through Quest Link, Air Link, Steam
   Link or Virtual Desktop.
 - **Your own World of Warcraft 1.12.1 client**, build 5875, English, in a folder of its own.
-- **A free [Tailscale](https://tailscale.com/download) account**, which lets you reach your friend's
-  PC without opening anything to the internet.
-- **From your friend:** a Tailscale share link, and an account and password on their server.
+- **To play on a friend's server:** a free [Tailscale](https://tailscale.com/download) account, and
+  from your friend a share link and an account on their server.
+- **To play on your own:** about 6 GB free, and an hour of your PC's time once.
 
 ## Get it
 
-1. Download the newest **VanillaVR-Friend-&lt;date&gt;.zip** from
-   [Releases](../../releases/latest).
-2. If Windows warns about files from the internet, right-click the zip, choose **Properties**, tick
-   **Unblock**, then unzip it anywhere you like.
+1. Download the **VanillaVR** zip from [Releases](../../releases/latest).
+2. Right-click the zip, choose **Properties**, tick **Unblock**, then unzip it anywhere you like.
+3. Double-click **`PLAY.cmd`**. The launcher's Settings ask for your game folder and where you play.
 
-## Once, before your first game
+## The launcher
 
-1. **Install Tailscale and make an account.** A new account is right: it makes you the owner of
-   your own small network, which accepting a share needs.
-2. **Accept your friend's share link.** Their PC then shows up in Tailscale.
+`PLAY.cmd` opens a launcher in the manner of the old game's: the news, your realm, a progress bar
+and a big **PLAY** button. Once it knows your game folder it wears your game's own login-screen
+art (the logo, the red buttons, the gold frames, the fonts), read from your install; nothing of the
+game is downloaded or shared.
 
-## Each time you play
+- **Updates** itself every time it opens, from your friend's PC, or from this page's releases when
+  you play on your own. Only what changed is fetched, and every file is checked before anything is
+  replaced. **Go back a version** undoes an update that plays worse.
+- **On your own**, it builds your realm once (the free [vMaNGOS](https://github.com/vmangos/core)
+  server, its world database and [MariaDB](https://mariadb.org), downloaded from their own pages,
+  then your game's maps read from your install), wakes it while you read the news, logs you straight
+  in, and puts it to sleep with your progress saved when you close the game. Your account is a game
+  master's: `.levelup`, `.tele` and `.partybot add` work in chat.
+- **After you play**, it asks how it went: fun, did it work, and how your arms and back feel, 1 to
+  5, plus what felt great and what broke. That, with what the session measured, becomes a
+  [playtest report](../../issues?q=label%3Aplaytest) here.
 
-1. **Check Tailscale is connected.** Its icon sits by the clock.
-2. **Start SteamVR** with your headset connected.
-3. **Double-click `PLAY.cmd`** in the kit. The first time, it asks where your 1.12.1 folder is and
-   for your friend's server address (their Tailscale address, like `100.101.102.103`), and keeps
-   both in `settings.txt`. It checks the server answers before starting.
-4. **Log in inside the headset.** Point at the fields with your finger and type on the keyboard
-   that floats below them.
+## Playtest reports
 
-## Updates
-
-`PLAY.cmd` keeps the kit up to date by itself. Each time, before the game starts, it asks your
-friend's PC for a newer version and fetches only what changed. Every file is checked before anything
-is replaced, so a bad download changes nothing.
-
-If a new version plays worse, **`ROLLBACK.cmd`** puts the previous one back, and that version is
-not installed again. Your own settings (`settings.txt`, `vr-settings.txt`) are never touched.
-
-So your friend can fix what goes wrong for you, `PLAY.cmd` sends them your last game logs: only what
-the game wrote while you played, nothing else from your PC. Put `SEND_LOGS=no` in `settings.txt`
-to stop it.
+Vanilla VR is built around three questions: is it fun, does it work, and how does your body feel
+after an hour of it. Every report helps answer them. Sent with your answers: how long you played and
+as which class, your PC's parts and your headset, your VR settings, what the session asked of your
+arms, the frame times, the moves that fired and the moments you marked (click both thumbsticks when
+something misfires). Your logs and motion recording go only to the friend whose server you play on,
+never to GitHub, and your name is on a report only if you tick **Put my name on it**. Playing on your
+own with no friend, **Post on GitHub** opens the report as a form for you to post yourself.
 
 ## Voice chat
 
@@ -80,26 +85,13 @@ Every button and body move is on one page:
 first-time tips explain each control as it comes up. What the client can do so far is on
 [the progress page](https://claude.ai/artifact/MUduZNciSaVUg31Hvx33dZ).
 
-## If something goes wrong
-
-- **"Can't reach the server"**: is Tailscale connected, did you accept the share link, and is your
-  friend's server running? Ask them.
-- **Windows says `VCRUNTIME140.dll` is missing**: install the Microsoft Visual C++ Redistributable
-  (x64) from Microsoft's website, then try again.
-- **Windows SmartScreen says it protected your PC**: choose **More info**, then **Run anyway**. The
-  client is not signed.
-- **No picture in the headset**: start SteamVR before `PLAY.cmd`. Without a headset the game runs
-  flat on your monitor.
-- **Too much motion, or too little**: the VR page in the game's book, or `vr-settings.txt` in the
-  kit.
-- **Logs for your friend**: the `logs` folder beside `PLAY.cmd`.
-
 ## What's here
 
 | | |
 |---|---|
-| [`kit/`](kit) | The launcher and guide as they ship in the zip: `PLAY.cmd`, `play.ps1`, `ROLLBACK.cmd`, `README.txt`, `vr-settings.txt` |
-| [Releases](../../releases) | The kit itself: the client `benilla-vr.exe` with the files above |
+| [`INSTALL.md`](INSTALL.md) | The install guide, with what to do when something goes wrong |
+| [`kit/`](kit) | The launcher and guide as they ship in the zip: `PLAY.cmd`, `launcher.ps1`, `play.ps1` (its engine), `solo.ps1` (your own realm), `ROLLBACK.cmd`, `README.txt`, `vr-settings.txt` |
+| [Releases](../../releases) | The kit itself: the client `benilla-vr.exe` and `launcher-art.exe` (the launcher's look, read from your game) with the files above, and the update the launcher fetches |
 | [`THIRD-PARTY-NOTICES.txt`](THIRD-PARTY-NOTICES.txt) | The licenses of the libraries inside the client |
 
 ## License
@@ -107,4 +99,6 @@ first-time tips explain each control as it comes up. What the client can do so f
 The client and the launcher are under the MIT license or the Apache License 2.0, at your option, as
 Benilla is: see [LICENSE-MIT](LICENSE-MIT) and [LICENSE-APACHE](LICENSE-APACHE). The libraries
 inside the client keep their own licenses, listed in
-[THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt).
+[THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt). Your own realm runs vMaNGOS and MariaDB (both
+GPL-2.0), which the launcher downloads from their own projects' pages when you build it; they are
+not part of this kit.
