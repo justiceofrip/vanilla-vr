@@ -41,6 +41,21 @@
 # and catch up when you look away.
 # WOWVR_HUD_FOLLOW=lazy
 
+# Riding: how fast the left stick turns your mount (degrees a second); sit higher on it (yards, to
+# see over a gryphon's head say); keep the room still instead of turning the view with the mount;
+# steer by pointing the left hand instead of the stick as reins.
+# WOWVR_MOUNT_TURN=110
+# WOWVR_MOUNT_EYES=0.3
+# WOWVR_MOUNT_VIEW=fixed
+# WOWVR_MOUNT_STEER=hand
+
+# The spell ring opens just above your hand; 0 opens it round the hand instead.
+# WOWVR_RING_OVER=0
+
+# A mirror before you (also on the book's VR page), and its sharpness in pixels high.
+# WOWVR_MIRROR=1
+# WOWVR_MIRROR_RES=1280
+
 # Y opens the book before you. panel makes Y the whole interface panel instead; WOWVR_BOOK_HIP=1
 # brings back drawing the book from your left hip and holding it.
 # WOWVR_MENU=panel
