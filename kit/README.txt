@@ -63,8 +63,10 @@ The launcher keeps this folder up to date by itself: each time it opens, it asks
 (the news shows what is new). Every file is checked before anything is replaced, so a bad download
 changes nothing. If a new version plays worse, the launcher's "Go back a version" (or
 ROLLBACK.cmd) puts the previous one back, and that version is not installed again (the next one
-will be). Your own settings (settings.txt, vr-settings.txt) and your realm are never touched. If
-the launcher's window will not open, run play.ps1 with PowerShell for the same thing in a console.
+will be). Your own settings (settings.txt, vr-settings.txt, and the game's own in the
+benilla-config folder: interface scale, key bindings, macros, chat) and your realm are never
+touched. If the launcher's window will not open, run play.ps1 with PowerShell for the same thing
+in a console.
 
 YOUR LOGS
 So your friend can fix what goes wrong for you and tune the moves, the launcher sends them your
@@ -113,6 +115,8 @@ IF SOMETHING GOES WRONG
 - No picture in the headset: start SteamVR before PLAY.cmd. Without a headset the game runs flat
   on the monitor.
 - Comfort and tuning: vr-settings.txt beside this file, or the VR page in the game's book.
+- The interface scale (the game's Video options) works at any setting in the headset and is kept
+  from one session to the next.
 - Logs for your friend, if they ask: the logs folder beside this file.
 
 The client is built on Benilla (Apache-2.0 or MIT, see LICENSE-APACHE and LICENSE-MIT). Your own
